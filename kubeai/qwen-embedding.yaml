@@ -1,0 +1,16 @@
+apiVersion: kubeai.org/v1
+kind: Model
+metadata:
+    name: qwen3-embedding-8b
+spec:
+    autoscalingDisabled: true
+    replicas: 1
+    features: [TextEmbedding]
+    url: s3://projet-models-hf/diffusion/hf_hub/Qwen/Qwen3-Embedding-8B
+    engine: VLLM
+    image: vllm/vllm-openai:v0.20.1
+    args:
+        - --gpu-memory-utilization=0.9
+    resourceProfile: vram-94gb:1
+    env:
+        AWS_ENDPOINT_URL: https://minio.lab.sspcloud.fr
