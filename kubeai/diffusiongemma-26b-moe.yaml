@@ -19,6 +19,7 @@ spec:
         - --kv-cache-dtype=fp8
         - --max-model-len=131072
         - --attention-backend=TRITON_ATTN
+        - --generation-config=vllm
 
     resourceProfile: vram-94gb:1
     env:
