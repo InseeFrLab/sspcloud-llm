@@ -8,7 +8,7 @@ spec:
     features: [TextGeneration]
     url: s3://projet-models-hf/diffusion/hf_hub/Qwen/Qwen3.8-27B-FP8
     engine: VLLM
-    image: vllm/vllm-openai:v0.27.1
+    image: vllm/vllm-openai:v0.31.0
     args:
         - --reasoning-parser=qwen3
         - --max-model-len=196608
