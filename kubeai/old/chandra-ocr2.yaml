@@ -4,7 +4,7 @@ metadata:
     name: chandra-ocr-2
 spec:
     autoscalingDisabled: true
-    replicas: 1
+    replicas: 0
     features: [TextGeneration]
     url: s3://projet-models-hf/diffusion/hf_hub/datalab-to/chandra-ocr-2
     engine: VLLM
