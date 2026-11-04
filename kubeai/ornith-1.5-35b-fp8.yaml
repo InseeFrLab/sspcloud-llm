@@ -1,0 +1,24 @@
+apiVersion: kubeai.org/v1
+kind: Model
+metadata:
+    name: ornith-1-5-35b-a3b-fp8
+spec:
+    autoscalingDisabled: true
+    replicas: 1
+    features: [TextGeneration]
+    url: s3://projet-models-hf/diffusion/hf_hub/ornith-ai/Ornith-1.5-35B-A3B-FP8
+    engine: VLLM
+    image: vllm/vllm-openai:v0.27.1
+    args:
+        - --tensor-parallel-size=1
+        - --gpu-memory-utilization=0.90
+        - --max-model-len=65536
+        - --kv-cache-dtype=fp8
+        - --language-model-only
+        - --enable-prefix-caching
+        - --enable-auto-tool-choice
+        - --tool-call-parser=qwen3_xml
+        - --reasoning-parser=qwen3
+    resourceProfile: vram-94gb:1
+    env:
+        AWS_ENDPOINT_URL: https://minio.lab.sspcloud.fr
