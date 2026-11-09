@@ -4,11 +4,11 @@ metadata:
     name: qwen3-8-27b
 spec:
     autoscalingDisabled: true
-    replicas: 1
+    replicas: 2
     features: [TextGeneration]
     url: s3://projet-models-hf/diffusion/hf_hub/Qwen/Qwen3.8-27B-FP8
     engine: VLLM
-    image: vllm/vllm-openai:v0.31.0
+    image: vllm/vllm-openai:v0.33.0
     args:
         - --reasoning-parser=qwen3
         - --max-model-len=196608
