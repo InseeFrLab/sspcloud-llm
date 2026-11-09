@@ -17,6 +17,7 @@ spec:
         - --tool-call-parser=qwen3_coder
         - --mm-encoder-tp-mode=data
         - --attention-backend=FLASHINFER
+        - --max-num-seqs=512
     resourceProfile: vram-94gb:1
     env:
         AWS_ENDPOINT_URL: https://minio.lab.sspcloud.fr
