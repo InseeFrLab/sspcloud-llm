@@ -4,7 +4,7 @@ metadata:
     name: qwen3-8-27b
 spec:
     autoscalingDisabled: true
-    replicas: 1
+    replicas: 2
     features: [TextGeneration]
     url: s3://projet-models-hf/diffusion/hf_hub/Qwen/Qwen3.8-27B-FP8
     engine: VLLM
